@@ -1,9 +1,13 @@
-const GetScore = (
-  TeamAScores: Array<number>,
-  TeamBScores: Array<number>,
-): string => {
-  const t1 = TeamAScores.reduce((acc: number, n: number) => acc + n, 0);
-  const t2 = TeamBScores.reduce((acc: number, n: number) => acc + n, 0);
-  return `${t1.toString().padStart(3, '0')}:${t2.toString().padStart(3, '0')}`;
-};
-export { GetScore };
+import { LinkedList } from './linked-list/linked-list';
+class Application {
+  public static main(): void {
+    const list = new LinkedList<number>();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.remove(2);
+    list.add(4);
+    console.log(list.toString());
+  }
+}
+Application.main();
